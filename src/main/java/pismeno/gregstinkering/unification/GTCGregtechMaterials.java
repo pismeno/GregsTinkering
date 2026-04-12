@@ -26,6 +26,7 @@ public final class GTCGregtechMaterials {
     public static Material Ardite;
     public static Material Manyullyn;
     public static Material PigIron;
+    public static Material Aluminiumbrass;
 
     private static final Map<Material, OrePrefix[]> ignoredItems = new HashMap<>();
 
@@ -62,10 +63,19 @@ public final class GTCGregtechMaterials {
                 .toolStats(ToolProperty.Builder.of(1.0F, 1.5F, 430, 2).build())
                 .build();
 
+        Aluminiumbrass = new Material.Builder(24003, new ResourceLocation(Tags.MODID,"alubrass"))
+                .ingot()
+                .liquid(new FluidBuilder())
+                .color(0xE2BE4E).iconSet(METALLIC)
+                .flags(EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, EXCLUDE_PLATE_COMPRESSOR_RECIPE)
+                .components(Copper, 1, Aluminium, 3)
+                .build();
+
         ignoredItems.put(Ardite, new OrePrefix[]{ingot, block, nugget});
         ignoredItems.put(Manyullyn, new OrePrefix[]{ingot, block, nugget});
         ignoredItems.put(PigIron, new OrePrefix[]{ingot, block, nugget});
         ignoredItems.put(Cobalt, new OrePrefix[]{ingot, block, nugget});
+        ignoredItems.put(Aluminiumbrass, new OrePrefix[]{ingot, block, nugget});
 
         for (Map.Entry<Material, OrePrefix[]> entry : ignoredItems.entrySet()) {
             Material material = entry.getKey();

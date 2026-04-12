@@ -8,7 +8,7 @@ import slimeknights.tconstruct.library.traits.AbstractTrait;
 public class TraitUnbreakable extends AbstractTrait {
 
     public TraitUnbreakable() {
-        super("unbreakable", TextFormatting.WHITE);
+        super("gtcunbreakable", TextFormatting.WHITE);
     }
 
     public int onToolDamage(ItemStack tool, int damage, int newDamage, EntityLivingBase entity) {

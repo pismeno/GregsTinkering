@@ -137,33 +137,8 @@ public class MachineRecipes {
                 .output(OrePrefix.dust, Manyullyn, 2)
                 .duration(190).EUt(120).buildAndRegister();
 
-        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
-                .duration(250).EUt(120)
-                .input(OrePrefix.ingot, Cobalt)
-                .input(OrePrefix.dust, Ardite)
-                .output(OrePrefix.ingot, Manyullyn, 2)
-                .buildAndRegister();
-
-        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
-                .duration(250).EUt(120)
-                .input(OrePrefix.dust, Cobalt)
-                .input(OrePrefix.ingot, Ardite)
-                .output(OrePrefix.ingot, Manyullyn, 2)
-                .buildAndRegister();
-
-        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
-                .duration(250).EUt(120)
-                .input(OrePrefix.ingot, Cobalt)
-                .input(OrePrefix.ingot, Ardite)
-                .output(OrePrefix.ingot, Manyullyn, 2)
-                .buildAndRegister();
-
-        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
-                .duration(250).EUt(120)
-                .input(OrePrefix.dust, Cobalt)
-                .input(OrePrefix.dust, Ardite)
-                .output(OrePrefix.ingot, Manyullyn, 2)
-                .buildAndRegister();
+        addAlloySmelter(Cobalt, 1, Ardite, 1, Manyullyn, 250, VA[MV]);
+        addAlloySmelter(Copper, 1, Aluminium, 3, Aluminiumbrass, 10, VA[ULV]);
     }
 
     private static void buildExtruderShapeRecipes(String castType, MetaItem<?>.MetaValueItem shapeValue) {
@@ -515,6 +490,36 @@ public class MachineRecipes {
                 .fluidOutputs(new FluidStack(gtMaterial.getFluid(), 8 * 36))
                 .category(RecipeCategories.EXTRACTOR_RECYCLING)
                 .duration(40 * 2).EUt(eut).buildAndRegister();
+    }
+
+    private static void addAlloySmelter(gregtech.api.unification.material.Material material1, int count1, gregtech.api.unification.material.Material material2, int count2, gregtech.api.unification.material.Material output, int duration, int EUt) {
+        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .duration(duration).EUt(EUt)
+                .input(OrePrefix.ingot, material1, count1)
+                .input(OrePrefix.dust, material2, count2)
+                .output(OrePrefix.ingot, output, count1 + count2)
+                .buildAndRegister();
+
+        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .duration(duration).EUt(EUt)
+                .input(OrePrefix.dust, material1, count1)
+                .input(OrePrefix.ingot, material2, count2)
+                .output(OrePrefix.ingot, output, count1 + count2)
+                .buildAndRegister();
+
+        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .duration(duration).EUt(EUt)
+                .input(OrePrefix.ingot, material1, count1)
+                .input(OrePrefix.ingot, material2, count2)
+                .output(OrePrefix.ingot, output, count1 + count2)
+                .buildAndRegister();
+
+        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .duration(duration).EUt(EUt)
+                .input(OrePrefix.dust, material1, count1)
+                .input(OrePrefix.dust, material2, count2)
+                .output(OrePrefix.ingot, output, count1 + count2)
+                .buildAndRegister();
     }
 
     private static ItemStack getCast(String type) {

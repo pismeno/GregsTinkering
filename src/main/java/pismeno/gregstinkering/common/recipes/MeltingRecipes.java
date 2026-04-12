@@ -9,6 +9,7 @@ import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 import net.minecraft.item.Item;
 import net.minecraftforge.fluids.Fluid;
+import pismeno.gregstinkering.Config;
 import pismeno.gregstinkering.unification.GTCGregtechMaterials;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import net.minecraft.item.ItemStack;
@@ -17,15 +18,17 @@ import static slimeknights.tconstruct.common.config.Config.oreToIngotRatio;
 
 public class MeltingRecipes {
     public static void init() {
-        addMeltingOres(tinOres, Materials.Tin.getFluid());
-        addMeltingOres(copperOres, Materials.Copper.getFluid());
-        addMeltingOres(leadOres, Materials.Lead.getFluid());
-        addMeltingOres(silverOres, Materials.Silver.getFluid());
-        addMeltingOres(goldOres, Materials.Gold.getFluid());
-        addMeltingOres(nickelOres, Materials.Nickel.getFluid());
-        addMeltingOres(ironOres, Materials.Iron.getFluid());
-        addMeltingOres(arditeOres, GTCGregtechMaterials.Ardite.getFluid());
-        addMeltingOres(cobaltOres, Materials.Cobalt.getFluid());
+        if (Config.doAddOreMeltingRecipes) {
+            addMeltingOres(tinOres, Materials.Tin.getFluid());
+            addMeltingOres(copperOres, Materials.Copper.getFluid());
+            addMeltingOres(leadOres, Materials.Lead.getFluid());
+            addMeltingOres(silverOres, Materials.Silver.getFluid());
+            addMeltingOres(goldOres, Materials.Gold.getFluid());
+            addMeltingOres(nickelOres, Materials.Nickel.getFluid());
+            addMeltingOres(ironOres, Materials.Iron.getFluid());
+            addMeltingOres(arditeOres, GTCGregtechMaterials.Ardite.getFluid());
+            addMeltingOres(cobaltOres, Materials.Cobalt.getFluid());
+        }
     }
 
     private MeltingRecipes() {}

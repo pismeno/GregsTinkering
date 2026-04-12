@@ -9,6 +9,7 @@ public class Config {
     public static Configuration config;
 
     public static boolean doOverrideTconstructConfig = true;
+    public static boolean doAddOreMeltingRecipes = true;
     public static boolean addMachineRecipesForTCMaterials = true;
 
     public static boolean TREATED_WOOD = true;
@@ -44,6 +45,7 @@ public class Config {
         category = "general";
         config.addCustomCategoryComment(category, "General settings");
         doOverrideTconstructConfig = config.getBoolean("overrideTConstructConfig", category, doOverrideTconstructConfig, "If true, overrides Tinker's Construct config (Disables Cobald and Ardite TConstruct ore gen, sets ore melting duplication to 1.0");
+        doAddOreMeltingRecipes = config.getBoolean("doAddOreMeltingRecipes", category, doAddOreMeltingRecipes, "If true, adds ore melting recipes for Gregtech ores to Tinker's Smeltery.");
         addMachineRecipesForTCMaterials = config.getBoolean("addMachineRecipesForTCMaterials", category, addMachineRecipesForTCMaterials, "If true, this will add GT machine recipes for: bronze, iron, pigiron, copper, lead, steel, cobalt, ardite");
 
         category = "materials";

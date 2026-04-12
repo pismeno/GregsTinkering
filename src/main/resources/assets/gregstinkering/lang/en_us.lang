@@ -74,12 +74,14 @@ material.blue_steel.name=Blue Steel
 material.tungstencarbide.name=Tungstencarbide
 material.neutronium.name=Neutronium
 material.titanium.name=Titanium
+material.inconel.name=Inconel
 material.rubber.name=Rubber
 material.synthetic_rubber.name=Styrene-Butadiene Rubber
 
 gregstinkering.material.ardite=Ardite
 gregstinkering.material.manyullyn=Manyullyn
 gregstinkering.material.pigiron=Pigiron
+gregstinkering.material.alubrass=Aluminium Brass
 
 modifier.plunderous.name=Plunderous
 modifier.plunderous.desc=§oAye, Avast!§r\nIncreases count of drops from mobs.
